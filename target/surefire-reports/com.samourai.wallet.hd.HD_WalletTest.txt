@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.hd.HD_WalletTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.160 s -- in com.samourai.wallet.hd.HD_WalletTest

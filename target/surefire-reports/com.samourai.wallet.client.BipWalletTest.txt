@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.client.BipWalletTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.590 s -- in com.samourai.wallet.client.BipWalletTest

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.cahoots.Stonewallx2ServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.699 s -- in com.samourai.wallet.cahoots.Stonewallx2ServiceTest

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.ricochet.RicochetUtilGenericTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.331 s -- in com.samourai.wallet.ricochet.RicochetUtilGenericTest

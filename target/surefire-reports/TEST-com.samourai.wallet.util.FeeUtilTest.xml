@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.samourai.wallet.util.FeeUtilTest" time="3.934" tests="12" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="20"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/test-classes:/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/classes:/Users/zacwatson/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/zacwatson/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/zacwatson/.m2/repository/org/json/json/20240205/json-20240205.jar:/Users/zacwatson/.m2/repository/io/samourai/code/whirlpool/bitcoinj/bitcoinj-core/007/bitcoinj-core-007.jar:/Users/zacwatson/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.77/bcprov-jdk18on-1.77.jar:/Users/zacwatson/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar:/Users/zacwatson/.m2/repository/com/google/guava/guava/32.1.3-jre/guava-32.1.3-jre.jar:/Users/zacwatson/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/zacwatson/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/zacwatson/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/zacwatson/.m2/repository/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar:/Users/zacwatson/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar:/Users/zacwatson/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/Users/zacwatson/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/zacwatson/.m2/repository/com/lambdaworks/scrypt/1.4.0/scrypt-1.4.0.jar:/Users/zacwatson/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/zacwatson/.m2/repository/io/samourai/code/wallet/xmanager-protocol/1.0.11/xmanager-protocol-1.0.11.jar:/Users/zacwatson/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/Users/zacwatson/.m2/repository/com/auth0/java-jwt/3.18.2/java-jwt-3.18.2.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.0/jackson-databind-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.0/jackson-annotations-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.0/jackson-core-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.0/jackson-datatype-jsr310-2.13.0.jar:/Users/zacwatson/.m2/repository/io/reactivex/rxjava2/rxjava/2.2.15/rxjava-2.2.15.jar:/Users/zacwatson/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/zacwatson/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/zacwatson/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/zacwatson/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/zacwatson/.m2/repository/ch/qos/logback/logback-classic/1.2.13/logback-classic-1.2.13.jar:/Users/zacwatson/.m2/repository/ch/qos/logback/logback-core/1.2.13/logback-core-1.2.13.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.3.41/kotlin-stdlib-jdk8-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.3.41/kotlin-stdlib-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.41/kotlin-stdlib-common-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.3.41/kotlin-stdlib-jdk7-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-test/1.3.41/kotlin-test-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-test-common/1.3.41/kotlin-test-common-1.3.41.jar:/Users/zacwatson/.m2/repository/io/samourai/code/wallet/java-http-client/2.0.0/java-http-client-2.0.0.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-client/9.4.54.v20240208/jetty-client-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-http/9.4.54.v20240208/jetty-http-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-util/9.4.54.v20240208/jetty-util-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-io/9.4.54.v20240208/jetty-io-9.4.54.v20240208.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="America/Chicago"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="20"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/20.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/surefire/surefirebooter-20240328120857862_3.jar /Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/surefire 2024-03-28T12-08-57_476-jvmRun1 surefire-20240328120857862_1tmp surefire_0-20240328120857862_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/test-classes:/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/classes:/Users/zacwatson/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/zacwatson/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/zacwatson/.m2/repository/org/json/json/20240205/json-20240205.jar:/Users/zacwatson/.m2/repository/io/samourai/code/whirlpool/bitcoinj/bitcoinj-core/007/bitcoinj-core-007.jar:/Users/zacwatson/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.77/bcprov-jdk18on-1.77.jar:/Users/zacwatson/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar:/Users/zacwatson/.m2/repository/com/google/guava/guava/32.1.3-jre/guava-32.1.3-jre.jar:/Users/zacwatson/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/zacwatson/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/zacwatson/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/zacwatson/.m2/repository/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar:/Users/zacwatson/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar:/Users/zacwatson/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/Users/zacwatson/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/zacwatson/.m2/repository/com/lambdaworks/scrypt/1.4.0/scrypt-1.4.0.jar:/Users/zacwatson/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/zacwatson/.m2/repository/io/samourai/code/wallet/xmanager-protocol/1.0.11/xmanager-protocol-1.0.11.jar:/Users/zacwatson/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/Users/zacwatson/.m2/repository/com/auth0/java-jwt/3.18.2/java-jwt-3.18.2.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.0/jackson-databind-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.0/jackson-annotations-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.0/jackson-core-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.0/jackson-datatype-jsr310-2.13.0.jar:/Users/zacwatson/.m2/repository/io/reactivex/rxjava2/rxjava/2.2.15/rxjava-2.2.15.jar:/Users/zacwatson/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/zacwatson/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/zacwatson/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/zacwatson/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/zacwatson/.m2/repository/ch/qos/logback/logback-classic/1.2.13/logback-classic-1.2.13.jar:/Users/zacwatson/.m2/repository/ch/qos/logback/logback-core/1.2.13/logback-core-1.2.13.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.3.41/kotlin-stdlib-jdk8-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.3.41/kotlin-stdlib-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.41/kotlin-stdlib-common-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.3.41/kotlin-stdlib-jdk7-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-test/1.3.41/kotlin-test-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-test-common/1.3.41/kotlin-test-common-1.3.41.jar:/Users/zacwatson/.m2/repository/io/samourai/code/wallet/java-http-client/2.0.0/java-http-client-2.0.0.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-client/9.4.54.v20240208/jetty-client-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-http/9.4.54.v20240208/jetty-http-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-util/9.4.54.v20240208/jetty-util-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-io/9.4.54.v20240208/jetty-io-9.4.54.v20240208.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/zacwatson"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk/20.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/surefire/surefirebooter-20240328120857862_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="20.0.2"/>
+    <property name="user.name" value="zacwatson"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.2.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/zacwatson/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="jetty.git.hash" value="cef3fbd6d736a21e7d541a5db490381d95a2047d"/>
+    <property name="java.io.tmpdir" value="/var/folders/hn/y1thvm4x5x964bvll4wj4_2m0000gn/T/"/>
+    <property name="java.version" value="20.0.2"/>
+    <property name="user.dir" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/zacwatson/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="20.0.2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="64.0"/>
+  </properties>
+  <testcase name="estimatedSizeSegwit_outputP2TR" classname="com.samourai.wallet.util.FeeUtilTest" time="0.176">
+    <system-out><![CDATA[12:09:05.809 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:05.977 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:05.977 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:05.977 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:05.977 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:05.977 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:05.977 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:05.977 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:05.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:05.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:05.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:05.978 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:05.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:05.979 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:06.140 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:06.140 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:06.140 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:06.141 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:06.141 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:06.141 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:06.141 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:06.141 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:06.141 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:06.141 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:06.141 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:06.141 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:06.148 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qdzcus7zvs7nywsje7mvzusdl5wpaq7f34l238d
+12:09:06.151 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=0/1/0, estimatedSize=122, realSize=122 => diff=0
+12:09:06.152 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q6er4d6cnncvxx4cenwfvv624nuhw76rpw6l2zr
+12:09:06.152 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=0/2/0, estimatedSize=165, realSize=165 => diff=0
+12:09:06.153 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qm7252f3w2j42qraync4w9qgm5a0uucj0hwh3f4
+12:09:06.154 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=0/3/0, estimatedSize=208, realSize=208 => diff=0
+12:09:06.154 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qrtmpcf9e2x8fwp4jrm230yafj44d3sq6l2pqqd
+12:09:06.155 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=0/4/0, estimatedSize=251, realSize=251 => diff=0
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwit" classname="com.samourai.wallet.util.FeeUtilTest" time="0.172">
+    <system-out><![CDATA[12:09:06.166 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:06.332 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:06.333 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:06.334 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:06.494 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:06.494 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:06.495 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:06.495 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:06.495 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:06.495 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:06.495 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:06.495 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:06.495 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:06.495 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qu679y77lz0lvg39zcw7yvcqc8pw0c3fs4jgcjw
+12:09:06.496 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=1/0/0, estimatedSize=113, realSize=110 => diff=3
+12:09:06.496 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q4q5rxqar5hef7fryfkjh53pj520av3rkpzpuh2
+12:09:06.496 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=1/0/0, estimatedSize=113, realSize=110 => diff=3
+12:09:06.497 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=mxssjv9gaLT49jHqRwKkG1WtL6db7qqKra
+12:09:06.497 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=1/0/0, outputs=1/0/0, estimatedSize=192, realSize=189 => diff=3
+12:09:06.498 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=n14hbw4WTrETMLaJpKXmyPjyb1JAzZMDLT
+12:09:06.498 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=1/0/0, outputs=1/0/1, estimatedSize=284, realSize=280 => diff=4
+12:09:06.499 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qvay28yh0slw8czp7pt4hs9at6436h3gr7q27f4
+12:09:06.500 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1qa89yg2t0uv2002gcj52wlp89c2n5exfr6m3k8z
+12:09:06.500 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1q6tnweud580jepzjh9dqlpumkg33jafthqy2d0r
+12:09:06.500 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/3, outputs=3/0/0, estimatedSize=319, realSize=308 => diff=11
+12:09:06.501 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q9puquvhldrpzqhrcgny5p2fgp6xpf9sjfhl30j
+12:09:06.502 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1q43xv2v5rtpfsd0cdzqgkky6t99hh70hct4ls3r
+12:09:06.502 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qj5vttep8pmj5j4al7zk5jdhj0srxsnkwtl3ulv
+12:09:06.502 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_NATIVE, address=tb1qnctxk8wzwes6m4xvtnyvkss278sxdxmfrqtwd5
+12:09:06.503 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/4, outputs=4/0/0, estimatedSize=422, realSize=406 => diff=16
+12:09:06.504 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q2qde78nfcauydj6e90ynr0eeny0euhgwc4pr9q
+12:09:06.505 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1qm5arvnhuq8ty4llewtcyxxk0yft7zc60jzk57g
+12:09:06.505 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qwtzr844h3w5jn7zkwll8yaah5w0mk8uadrjm2d
+12:09:06.505 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_NATIVE, address=tb1qlwk3nm9lg5hq69d3ssmz57rtvgpkwu0jne96l8
+12:09:06.506 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #4: value=10000, addressType=SEGWIT_NATIVE, address=tb1qtzjkragfd935znj79hyqaypxpe7a40627sxquv
+12:09:06.506 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/5, outputs=5/0/0, estimatedSize=525, realSize=505 => diff=20
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwitWhirlpoolTx0" classname="com.samourai.wallet.util.FeeUtilTest" time="0.161">
+    <system-out><![CDATA[12:09:06.518 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:06.676 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:06.676 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:06.677 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:06.677 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:06.677 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:06.837 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:06.837 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:06.838 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qa58s2kgl9vgggqnyankr7ph34jhqw0m36wy2ch
+12:09:06.838 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=3/0/1, estimatedSize=273, realSize=264 => diff=9
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwit_taproot" classname="com.samourai.wallet.util.FeeUtilTest" time="0.171">
+    <system-out><![CDATA[12:09:06.846 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:06.997 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:06.997 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:06.998 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:06.999 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:07.151 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:07.151 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:07.151 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qjxzf2x8hkm2qje0tr75yz9q90um7r9xsjuqdjl
+12:09:07.152 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=1/0/0, estimatedSize=113, realSize=110 => diff=3
+12:09:07.152 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q0jgsw65qdh6y7w0frgxntczjm40nxe2hr2dr36
+12:09:07.152 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=1/1/0, estimatedSize=156, realSize=153 => diff=3
+12:09:07.153 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=n3d1v2tzHaE9tQ3LzvUiEzd1VxGryzreEe
+12:09:07.153 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=1/0/0, outputs=1/0/0, estimatedSize=192, realSize=189 => diff=3
+12:09:07.154 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=n4gs28qJBEgGQQi4RZShBX1Fi2Ja3ZNfWv
+12:09:07.154 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=1/0/0, outputs=1/1/0, estimatedSize=235, realSize=232 => diff=3
+12:09:07.154 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=mgkAL8iSmc2MV62GoLhuHSgNSdxsQ4Zd4L
+12:09:07.155 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=1/0/0, outputs=1/0/1, estimatedSize=284, realSize=281 => diff=3
+12:09:07.155 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=mzEv84yKhxep8e5rpvq9XyN8K7zvv8YQbD
+12:09:07.155 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=1/0/0, outputs=1/1/1, estimatedSize=327, realSize=324 => diff=3
+12:09:07.156 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qwl7c90tfgezgqmp5ucam5gpvx64e94gskh2xp4
+12:09:07.156 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1q7c55yx4f30jy04x5lu9394kyyhetzwc89jh2hp
+12:09:07.156 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1q8fmx66uptsmglputpn4qjw3ccufaaru8r79fzc
+12:09:07.157 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/3, outputs=3/0/0, estimatedSize=319, realSize=308 => diff=11
+12:09:07.158 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qquhgxkynx9dy4cztg2d4wqrevw0luwse9vqg5e
+12:09:07.158 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1q0ncx5z766lx88d3rpp4ctgtww3t4r0q7g29r60
+12:09:07.158 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qfd5g79uw4hpf5gvxuj6u2fcasx4vj644l84h4t
+12:09:07.159 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/3, outputs=3/1/0, estimatedSize=362, realSize=350 => diff=12
+12:09:07.160 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qn239g8a2q3xfnhza8hckefwpuemscsyr2kdfc8
+12:09:07.160 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1qddphlfppcdcdy3scd26p4tu0w998gx9s9uxhz8
+12:09:07.160 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qzwpfaj30m67f2htqfd0fwc6q75x8yn9dstu3ty
+12:09:07.161 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_NATIVE, address=tb1q8kjtzn93aeahpfep7jr443h9leqwss9u6ncuft
+12:09:07.161 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/4, outputs=4/0/0, estimatedSize=422, realSize=406 => diff=16
+12:09:07.162 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qjhsk5kjsflw0rmr5wgukfgels7u95h4fnn5e60
+12:09:07.162 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1q80mvu769f9pyj3zz6sn2wgj8gczmmrn3k9d559
+12:09:07.162 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qe3chdsdud05mljvexgcyakx6xsk0luxw5a2xzl
+12:09:07.162 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_NATIVE, address=tb1qae2hrd7ckwvzk7dd0j4ejeg860sjaa5jyktc3a
+12:09:07.163 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/4, outputs=4/1/0, estimatedSize=465, realSize=449 => diff=16
+12:09:07.164 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q2jlzp73trurctcvrzke8nsy0fzmemquxgmqucl
+12:09:07.164 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1qn3ualpf4xllfqhr0m5jplqqs2zgu9uqjxs5kp0
+12:09:07.164 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1q74kl0gf5vhge3vwnnufc2nq9ejj4x337fkyy7x
+12:09:07.165 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_NATIVE, address=tb1q9arfpun0m2nsu9ckg02efw7dkn3mydrytyah7t
+12:09:07.165 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #4: value=10000, addressType=SEGWIT_NATIVE, address=tb1q42wecwha389nygelve3mhmjgy7da220ey3zz0d
+12:09:07.166 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/5, outputs=5/0/0, estimatedSize=525, realSize=505 => diff=20
+12:09:07.168 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qfk7c4kghau7sul6z0dyufcp6vmqxjqe8y4jv5k
+12:09:07.168 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1qsvksglmwklf4c6rul0zlhyp7se3d309h9tem2m
+12:09:07.168 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qm0e577t3snq5vgd8zy7aemu9j0clpr583qndlv
+12:09:07.168 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_NATIVE, address=tb1q00k798ew3ndql0psxt5llaqt973rq673zx6k2h
+12:09:07.169 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #4: value=10000, addressType=SEGWIT_NATIVE, address=tb1qlf3sjy2a3j7jg0yc0y8s2545qe9s9j3gahgvw6
+12:09:07.169 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/5, outputs=5/1/0, estimatedSize=568, realSize=549 => diff=19
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwit_outputNonP2TR" classname="com.samourai.wallet.util.FeeUtilTest" time="0.163">
+    <system-out><![CDATA[12:09:07.176 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:07.329 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:07.329 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:07.330 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:07.331 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:07.488 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:07.489 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:07.489 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q8txz0ajqma7p885hhzn9rm678jvdlxv3rks52r
+12:09:07.490 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=1/0/0, estimatedSize=113, realSize=110 => diff=3
+12:09:07.490 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qftu2nsa64andn0z299meqjrkee43apjt3xecag
+12:09:07.491 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=2/0/0, estimatedSize=147, realSize=141 => diff=6
+12:09:07.492 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qn4uemjsmpr3cct0wxp7pcsuepjxhvq7vzxaw4e
+12:09:07.492 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=3/0/0, estimatedSize=181, realSize=172 => diff=9
+12:09:07.493 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q7md4a958hn3kgre7pgspd5c9v50u9q2apxfdh9
+12:09:07.493 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=4/0/0, estimatedSize=215, realSize=203 => diff=12
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwit_cahoots" classname="com.samourai.wallet.util.FeeUtilTest" time="0.155">
+    <system-out><![CDATA[12:09:07.501 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:07.652 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:07.652 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:07.652 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:07.652 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:07.652 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:07.652 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:07.652 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:07.652 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:07.653 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:07.653 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:07.653 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:07.653 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:07.654 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:07.804 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:07.804 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:07.805 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:07.805 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:07.805 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:07.805 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:07.806 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1ql09xcpfvl9e92h77gdegma7hagwwpuxtzckcqq
+12:09:07.806 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1q67txkn0t55trssvr3v366qfe0nus7h2sp8jrkv
+12:09:07.806 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qvgcp3xhncsrqccrmpq4pux9s3umdt3yxvjsyzj
+12:09:07.807 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_NATIVE, address=tb1qls4z54ml8ahgh4jfffxmmdtezqmnx36ttykv6w
+12:09:07.807 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/4, outputs=4/0/0, estimatedSize=422, realSize=407 => diff=15
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwit_inputP2PKH" classname="com.samourai.wallet.util.FeeUtilTest" time="0.159">
+    <system-out><![CDATA[12:09:07.815 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:07.978 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:07.978 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:07.979 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:08.130 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:08.130 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:08.131 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=mgwwkhkfuLgLTDSzh7gMScNXXrEgvPhKr9
+12:09:08.132 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=1/0/0, outputs=1/0/0, estimatedSize=192, realSize=189 => diff=3
+12:09:08.132 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=mwh9sqD5jrpDysg5jmwB9ApsgTgREqEeXE
+12:09:08.133 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=LEGACY, address=musjqiEYtNok8zj8mqLJqHjxj5qELpVjBB
+12:09:08.133 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=2/0/0, outputs=1/0/0, estimatedSize=340, realSize=336 => diff=4
+12:09:08.134 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=mynWmcuiCjWnW5n5QPvwrWF6C1Rs3rDcQf
+12:09:08.135 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=LEGACY, address=mvBtB2L9DBWqQRy6fFhyhnG38yYXPvUeqb
+12:09:08.135 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=LEGACY, address=mja6Zjc5ZqrCdU5DeJLCd8nPneq8Bxq5Zx
+12:09:08.135 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=3/0/0, outputs=1/0/0, estimatedSize=488, realSize=484 => diff=4
+12:09:08.136 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=LEGACY, address=mrGKiHKuxbFdfUSmFmEkRTTTY8cT3Exj6Z
+12:09:08.137 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=LEGACY, address=mfpKS9yZcmZVFb4sgtxsBnjmXkwnfmJXqS
+12:09:08.137 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=LEGACY, address=mtkBcv3wCkiBMTub6CLpzWS6uezWqigqCJ
+12:09:08.138 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=LEGACY, address=mhi7ezfE4B9NLVKEnZpgyigPgbEBbzac3T
+12:09:08.138 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=4/0/0, outputs=1/0/0, estimatedSize=636, realSize=630 => diff=6
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedFeeSegwit_nonP2TR" classname="com.samourai.wallet.util.FeeUtilTest" time="0.153">
+    <system-out><![CDATA[12:09:08.147 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:08.301 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:08.301 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:08.302 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:08.454 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:08.454 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:08.454 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:08.455 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:08.455 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:08.455 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:08.455 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:08.455 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:08.455 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:08.455 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:08.455 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:08.455 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwit_inputP2SHP2WPKH" classname="com.samourai.wallet.util.FeeUtilTest" time="0.169">
+    <system-out><![CDATA[12:09:08.462 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:08.616 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:08.617 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:08.617 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:08.618 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:08.773 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:08.773 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:08.774 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:08.774 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:08.774 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:08.775 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_COMPAT, address=2N2A264d9RrMVbDpbguJHNkmCKDtc1Hz2ND
+12:09:08.776 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/1/0, outputs=1/0/0, estimatedSize=136, realSize=133 => diff=3
+12:09:08.776 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_COMPAT, address=2NFyT5uRqFGPTDVMT7PJuVcXgBYTHr6FgNE
+12:09:08.777 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_COMPAT, address=2NC2UTzxYfCjgavwNiM9rk5q8F4psjUTjKR
+12:09:08.778 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/2/0, outputs=1/0/0, estimatedSize=228, realSize=224 => diff=4
+12:09:08.779 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_COMPAT, address=2MsnfBvH9pXPnwm5KdtgTA4MzXiHtHEmxeC
+12:09:08.779 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_COMPAT, address=2N2tmH34npVpvkCjE3ZqN7R2NV55SSyaWVu
+12:09:08.780 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_COMPAT, address=2N3Bea1M4c7RwX87xZczdb2XQAMzmpc9BXB
+12:09:08.781 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/3/0, outputs=1/0/0, estimatedSize=320, realSize=315 => diff=5
+12:09:08.782 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_COMPAT, address=2MwEKoivPYnhghgqmXhnDYkMifYFYra7XbP
+12:09:08.783 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_COMPAT, address=2NCnVqfHWJMKZPN13tUvoJpLGJxQVQ54XFt
+12:09:08.785 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_COMPAT, address=2MvsBZmmWDnNXP5zR45pJAM3rfkZQpZC9WQ
+12:09:08.785 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_COMPAT, address=2NBHfoVMm7vZWJ8vpn5Zgr5fkjgh42AU9to
+12:09:08.786 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/4/0, outputs=1/0/0, estimatedSize=412, realSize=405 => diff=7
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwit_inputP2WPKH" classname="com.samourai.wallet.util.FeeUtilTest" time="0.154">
+    <system-out><![CDATA[12:09:08.793 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:08.941 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:08.941 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:08.942 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:09.092 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:09.092 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:09.092 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qkzmg8j8408796wwx0ps5djqadchhkxxqd23me2
+12:09:09.093 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=1/0/0, estimatedSize=113, realSize=110 => diff=3
+12:09:09.093 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qmtfumz60gfucxlg62u0np8wrctme2rnmpnnvjs
+12:09:09.093 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1qjeczvl66jcky0hshhcut7c0g5h67lwgewmldyf
+12:09:09.093 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/2, outputs=1/0/0, estimatedSize=182, realSize=177 => diff=5
+12:09:09.094 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q35uj60de36ls2caq3f9jyw3n2d0klam6nl2ngq
+12:09:09.094 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1quuls42eh9mvqpv9x57gvt6ncrpe40ewcru8sxh
+12:09:09.094 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qymhwhc9uvapcphe8atmazedr2zdltl67xfq0at
+12:09:09.095 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/3, outputs=1/0/0, estimatedSize=251, realSize=245 => diff=6
+12:09:09.095 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qsz7megh3ve5wk93mfk52g9rclvwtv0yr03lu93
+12:09:09.096 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #1: value=10000, addressType=SEGWIT_NATIVE, address=tb1qk3uzq7gxwfcp4g270a2xlznvqfy4k4d65m5a5l
+12:09:09.096 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #2: value=10000, addressType=SEGWIT_NATIVE, address=tb1qhchqlgmyq6f88fq7a72s0uztwz2lxlzq0v6h08
+12:09:09.096 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #3: value=10000, addressType=SEGWIT_NATIVE, address=tb1qkejc0qvhncgucjmdt0nzlfyqvwpyjl64562vm3
+12:09:09.096 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/4, outputs=1/0/0, estimatedSize=320, realSize=314 => diff=6
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedFeeSegwit_taproot" classname="com.samourai.wallet.util.FeeUtilTest" time="0.152">
+    <system-out><![CDATA[12:09:09.102 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:09.252 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:09.252 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:09.253 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:09.253 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:09.253 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:09.254 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:09.404 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:09.405 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:09.405 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+]]></system-out>
+  </testcase>
+  <testcase name="estimatedSizeSegwit_outputOpReturn" classname="com.samourai.wallet.util.FeeUtilTest" time="0.165">
+    <system-out><![CDATA[12:09:09.412 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:09.563 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:09.563 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:09.564 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:09.726 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:09.726 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:09.726 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:09.726 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:09.726 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:09.726 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:09.727 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:09.727 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q5u5pgddu8ysac2npjndp52zfn7p7yd42mgf0s4
+12:09:09.728 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=0/0/1, estimatedSize=171, realSize=171 => diff=0
+12:09:09.728 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qxnz9ycvrtalkqkvudahz2495p3hgmqa3el7jpl
+12:09:09.728 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=0/0/2, estimatedSize=263, realSize=263 => diff=0
+12:09:09.728 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1qx32euugqetphz0hkq23ud7nsnv6v7d3px9d4aw
+12:09:09.729 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=0/0/3, estimatedSize=355, realSize=355 => diff=0
+12:09:09.729 [main] DEBUG com.samourai.wallet.send.SendFactoryGeneric - signInput #0: value=10000, addressType=SEGWIT_NATIVE, address=tb1q444ltdccvz08655d3h7k2y642ap3y4qs33wt66
+12:09:09.729 [main] INFO com.samourai.wallet.test.AbstractTest - estimatedSizeSegwit: inputs=0/0/1, outputs=0/0/4, estimatedSize=447, realSize=447 => diff=0
+]]></system-out>
+  </testcase>
+</testsuite>

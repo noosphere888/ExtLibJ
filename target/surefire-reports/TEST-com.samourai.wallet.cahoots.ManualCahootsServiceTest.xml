@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.samourai.wallet.cahoots.ManualCahootsServiceTest" time="2.192" tests="3" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="20"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/test-classes:/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/classes:/Users/zacwatson/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/zacwatson/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/zacwatson/.m2/repository/org/json/json/20240205/json-20240205.jar:/Users/zacwatson/.m2/repository/io/samourai/code/whirlpool/bitcoinj/bitcoinj-core/007/bitcoinj-core-007.jar:/Users/zacwatson/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.77/bcprov-jdk18on-1.77.jar:/Users/zacwatson/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar:/Users/zacwatson/.m2/repository/com/google/guava/guava/32.1.3-jre/guava-32.1.3-jre.jar:/Users/zacwatson/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/zacwatson/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/zacwatson/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/zacwatson/.m2/repository/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar:/Users/zacwatson/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar:/Users/zacwatson/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/Users/zacwatson/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/zacwatson/.m2/repository/com/lambdaworks/scrypt/1.4.0/scrypt-1.4.0.jar:/Users/zacwatson/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/zacwatson/.m2/repository/io/samourai/code/wallet/xmanager-protocol/1.0.11/xmanager-protocol-1.0.11.jar:/Users/zacwatson/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/Users/zacwatson/.m2/repository/com/auth0/java-jwt/3.18.2/java-jwt-3.18.2.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.0/jackson-databind-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.0/jackson-annotations-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.0/jackson-core-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.0/jackson-datatype-jsr310-2.13.0.jar:/Users/zacwatson/.m2/repository/io/reactivex/rxjava2/rxjava/2.2.15/rxjava-2.2.15.jar:/Users/zacwatson/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/zacwatson/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/zacwatson/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/zacwatson/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/zacwatson/.m2/repository/ch/qos/logback/logback-classic/1.2.13/logback-classic-1.2.13.jar:/Users/zacwatson/.m2/repository/ch/qos/logback/logback-core/1.2.13/logback-core-1.2.13.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.3.41/kotlin-stdlib-jdk8-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.3.41/kotlin-stdlib-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.41/kotlin-stdlib-common-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.3.41/kotlin-stdlib-jdk7-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-test/1.3.41/kotlin-test-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-test-common/1.3.41/kotlin-test-common-1.3.41.jar:/Users/zacwatson/.m2/repository/io/samourai/code/wallet/java-http-client/2.0.0/java-http-client-2.0.0.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-client/9.4.54.v20240208/jetty-client-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-http/9.4.54.v20240208/jetty-http-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-util/9.4.54.v20240208/jetty-util-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-io/9.4.54.v20240208/jetty-io-9.4.54.v20240208.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="America/Chicago"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="20"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/20.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/surefire/surefirebooter-20240328120857862_3.jar /Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/surefire 2024-03-28T12-08-57_476-jvmRun1 surefire-20240328120857862_1tmp surefire_0-20240328120857862_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/test-classes:/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/classes:/Users/zacwatson/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/zacwatson/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/zacwatson/.m2/repository/org/json/json/20240205/json-20240205.jar:/Users/zacwatson/.m2/repository/io/samourai/code/whirlpool/bitcoinj/bitcoinj-core/007/bitcoinj-core-007.jar:/Users/zacwatson/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.77/bcprov-jdk18on-1.77.jar:/Users/zacwatson/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar:/Users/zacwatson/.m2/repository/com/google/guava/guava/32.1.3-jre/guava-32.1.3-jre.jar:/Users/zacwatson/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/zacwatson/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/zacwatson/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/zacwatson/.m2/repository/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar:/Users/zacwatson/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar:/Users/zacwatson/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/Users/zacwatson/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/zacwatson/.m2/repository/com/lambdaworks/scrypt/1.4.0/scrypt-1.4.0.jar:/Users/zacwatson/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/zacwatson/.m2/repository/io/samourai/code/wallet/xmanager-protocol/1.0.11/xmanager-protocol-1.0.11.jar:/Users/zacwatson/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/Users/zacwatson/.m2/repository/com/auth0/java-jwt/3.18.2/java-jwt-3.18.2.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.0/jackson-databind-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.0/jackson-annotations-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.0/jackson-core-2.13.0.jar:/Users/zacwatson/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.0/jackson-datatype-jsr310-2.13.0.jar:/Users/zacwatson/.m2/repository/io/reactivex/rxjava2/rxjava/2.2.15/rxjava-2.2.15.jar:/Users/zacwatson/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/zacwatson/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/zacwatson/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/zacwatson/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/zacwatson/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/zacwatson/.m2/repository/ch/qos/logback/logback-classic/1.2.13/logback-classic-1.2.13.jar:/Users/zacwatson/.m2/repository/ch/qos/logback/logback-core/1.2.13/logback-core-1.2.13.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.3.41/kotlin-stdlib-jdk8-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.3.41/kotlin-stdlib-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.41/kotlin-stdlib-common-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.3.41/kotlin-stdlib-jdk7-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-test/1.3.41/kotlin-test-1.3.41.jar:/Users/zacwatson/.m2/repository/org/jetbrains/kotlin/kotlin-test-common/1.3.41/kotlin-test-common-1.3.41.jar:/Users/zacwatson/.m2/repository/io/samourai/code/wallet/java-http-client/2.0.0/java-http-client-2.0.0.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-client/9.4.54.v20240208/jetty-client-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-http/9.4.54.v20240208/jetty-http-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-util/9.4.54.v20240208/jetty-util-9.4.54.v20240208.jar:/Users/zacwatson/.m2/repository/org/eclipse/jetty/jetty-io/9.4.54.v20240208/jetty-io-9.4.54.v20240208.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/zacwatson"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk/20.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ/target/surefire/surefirebooter-20240328120857862_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="20.0.2"/>
+    <property name="user.name" value="zacwatson"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.2.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/zacwatson/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="jetty.git.hash" value="cef3fbd6d736a21e7d541a5db490381d95a2047d"/>
+    <property name="java.io.tmpdir" value="/var/folders/hn/y1thvm4x5x964bvll4wj4_2m0000gn/T/"/>
+    <property name="java.version" value="20.0.2"/>
+    <property name="user.dir" value="/Users/zacwatson/Work/Samourai/Wallet/ExtLibJ"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/zacwatson/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="20.0.2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="64.0"/>
+  </properties>
+  <testcase name="Stonewallx2" classname="com.samourai.wallet.cahoots.ManualCahootsServiceTest" time="0.393">
+    <system-out><![CDATA[12:09:53.452 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:53.607 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:53.608 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:53.608 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:53.684 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LZp', bipPub='tpu...LZp'}
+12:09:53.684 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...2dH', bipPub='upu...bSs'}
+12:09:53.684 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...MfN', bipPub='vpu...sew'}
+12:09:53.684 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...y1p', bipPub='vpu...D4a'}
+12:09:53.684 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...NLN', bipPub='vpu...RKR'}
+12:09:53.684 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...86t', bipPub='vpu...XXs'}
+12:09:53.780 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...XeJ', bipPub='tpu...XeJ'}
+12:09:53.780 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...TBn', bipPub='upu...QVy'}
+12:09:53.780 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...Nbr', bipPub='vpu...R4q'}
+12:09:53.780 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...ZBX', bipPub='vpu...XxM'}
+12:09:53.780 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...do5', bipPub='vpu...2eX'}
+12:09:53.780 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...QxP', bipPub='vpu...M4F'}
+12:09:53.814 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:53.967 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:53.967 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:54.040 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LZp', bipPub='tpu...LZp'}
+12:09:54.040 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...2dH', bipPub='upu...bSs'}
+12:09:54.040 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...MfN', bipPub='vpu...sew'}
+12:09:54.040 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...y1p', bipPub='vpu...D4a'}
+12:09:54.040 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...NLN', bipPub='vpu...RKR'}
+12:09:54.040 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...86t', bipPub='vpu...XXs'}
+12:09:54.137 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...XeJ', bipPub='tpu...XeJ'}
+12:09:54.137 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...TBn', bipPub='upu...QVy'}
+12:09:54.137 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...Nbr', bipPub='vpu...R4q'}
+12:09:54.137 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...ZBX', bipPub='vpu...XxM'}
+12:09:54.137 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...do5', bipPub='vpu...2eX'}
+12:09:54.137 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...QxP', bipPub='vpu...M4F'}
+12:09:54.168 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 INITIATOR => step=0
+12:09:54.171 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - BIP FORMAT:: SEGWIT_NATIVE
+12:09:54.171 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - +output (CounterParty Mix) = tb1qv4ak4l0w76qflk4uulavu22kxtaajnltkzxyq5
+12:09:54.171 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doSTONEWALLx2_1 STONEWALLX2/COUNTERPARTY
+12:09:54.171 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={}
+12:09:54.171 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=null
+12:09:54.174 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - BIP84 utxos:1
+12:09:54.174 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - BIP84 selected utxo: CahootsUtxo{utxo=9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1, value=10000, address=tb1qh287jqsh6mkpqmd8euumyfam00fkr78qhrdnde, path=null, xpub=tpubDCKFqGcC4KmHwUHG6orVRRUQZZZ3s9kQ64YUufULo9SY1E35aJwa2MH18AxuKddtJzfjMzCgKTEgBJx3WAGxYxVdMxeTYK5Xbtsv5P6fNbr}
+12:09:54.174 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - 1 selected utxos, totalContributedAmount=10000, requiredAmount=5546
+12:09:54.174 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - +output (CounterParty change) = tb1qgzzjhah2q3pqfwpx5xpdrd649qmyl59a6m6cp4
+12:09:54.177 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doSTONEWALLx2_1 STONEWALLX2/COUNTERPARTY
+12:09:54.177 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:54.187 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  9a65305212d45d3497ba2eee2235114fe0d8ba67e866b37080cb23fde84252c3
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00005 BTC
+     fee  0.00 BTC/kB, 0.00 BTC for 113 bytes
+     prps UNKNOWN
+
+12:09:54.187 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 COUNTERPARTY => step=1
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 SENDER <= step=1
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doSTONEWALLx2_2 STONEWALLX2/SENDER
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  9a65305212d45d3497ba2eee2235114fe0d8ba67e866b37080cb23fde84252c3
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00005 BTC
+     fee  0.00 BTC/kB, 0.00 BTC for 113 bytes
+     prps UNKNOWN
+
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - step2 tx:0200000001ad05bb9c893f5cb9762ea57729efaf4a4b8eb1e377533fddc49d15d01fb307940100000000fdffffff028813000000000000160014657b6afdeef6809fdabce7face295632fbd94feb881300000000000016001440852bf6ea044204b826a182d1b75528364fd0bdd2040000
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - step2 tx:  9a65305212d45d3497ba2eee2235114fe0d8ba67e866b37080cb23fde84252c3
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00005 BTC
+     fee  0.00 BTC/kB, 0.00 BTC for 113 bytes
+     prps UNKNOWN
+
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - BIP84 utxos:1
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - BIP84 selected utxo: CahootsUtxo{utxo=14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1, value=10000, address=tb1qkymumss6zj0rxy9l3v5vqxqwwffy8jjsyhrkrg, path=null, xpub=tpubDDLBK9gJk4HdPCDzF4Yhxx3u6q1QWo7iZAPVHfsFjLp9rUxXf79FPEK4cKMiV1jrJqrCCVJnciMh1kau2xZtjpZ5DoiaK3RbF6MffFWXMfN}
+12:09:54.190 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - fee:284
+12:09:54.191 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - 1 selected utxos, totalContributedAmount=10000, requiredAmount=5830
+12:09:54.191 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - fee pair:284
+12:09:54.191 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - destination:tb1q9m8cc0jkjlc9zwvea5a2365u6px3yu646vgez4
+12:09:54.191 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - output value post fee:4858
+12:09:54.191 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - +output (Spender change) = tb1qfe8765vcdka0xgkjkdhxjzux8raq7qsyamffad
+12:09:54.191 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doSTONEWALLx2_2 STONEWALLX2/SENDER
+12:09:54.191 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:54.192 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  8b5669de2673212982b8bb5692ab667dcff9e937bcad037fd1e285450ca179b8
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[2ecf8c3e5697f0513999ed3aa8ea9cd04d127355] 0.00005 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004858 BTC
+     fee  0.00001314 BTC/kB, 0.00000284 BTC for 216 bytes
+     prps UNKNOWN
+
+12:09:54.192 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 SENDER => step=2
+12:09:54.193 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 COUNTERPARTY <= step=2
+12:09:54.193 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doStep3 STONEWALLX2/COUNTERPARTY
+12:09:54.193 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:54.194 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  8b5669de2673212982b8bb5692ab667dcff9e937bcad037fd1e285450ca179b8
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[2ecf8c3e5697f0513999ed3aa8ea9cd04d127355] 0.00005 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004858 BTC
+     fee  0.00001314 BTC/kB, 0.00000284 BTC for 216 bytes
+     prps UNKNOWN
+
+12:09:54.197 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx:  0910de5bf08354a2dcccc2509fedfa82ec97541568620768e8644d95fa81f293
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[2ecf8c3e5697f0513999ed3aa8ea9cd04d127355] 0.00005 BTC
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     fee  0.00001314 BTC/kB, 0.00000284 BTC for 216 bytes
+     prps UNKNOWN
+
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx bech32:tb1qyvqh86akdkhnh8fh7j0q7n8j78k0wruz5et8tj
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx value:10000
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/COUNTERPARTY] computeSpendAmount: keyBag=[9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1]
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/COUNTERPARTY] computeSpendAmount: +input 10000 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/COUNTERPARTY] computeSpendAmount: -output 4858 tb1qgzzjhah2q3pqfwpx5xpdrd649qmyl59a6m6cp4
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/COUNTERPARTY] computeSpendAmount: -output 5000 tb1qv4ak4l0w76qflk4uulavu22kxtaajnltkzxyq5
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/COUNTERPARTY] computeSpendAmount = 142
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - [STONEWALLX2/COUNTERPARTY] maxSpendAmount = 142: sharedMinerFee=142
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - [STONEWALLX2/COUNTERPARTY] COUNTERPARTY verifiedSpendAmount=142, maxSpendAmount=142
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doStep3 STONEWALLX2/COUNTERPARTY
+12:09:54.198 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:54.199 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  0910de5bf08354a2dcccc2509fedfa82ec97541568620768e8644d95fa81f293
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[2ecf8c3e5697f0513999ed3aa8ea9cd04d127355] 0.00005 BTC
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     fee  0.00000871 BTC/kB, 0.00000284 BTC for 326 bytes
+     prps UNKNOWN
+
+12:09:54.199 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 COUNTERPARTY => step=3
+12:09:54.200 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 SENDER <= step=3
+12:09:54.200 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doStep4 STONEWALLX2/SENDER
+12:09:54.200 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:54.201 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  0910de5bf08354a2dcccc2509fedfa82ec97541568620768e8644d95fa81f293
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[2ecf8c3e5697f0513999ed3aa8ea9cd04d127355] 0.00005 BTC
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     fee  0.00000871 BTC/kB, 0.00000284 BTC for 326 bytes
+     prps UNKNOWN
+
+12:09:54.201 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx:  0910de5bf08354a2dcccc2509fedfa82ec97541568620768e8644d95fa81f293
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[2ecf8c3e5697f0513999ed3aa8ea9cd04d127355] 0.00005 BTC
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     fee  0.00000871 BTC/kB, 0.00000284 BTC for 326 bytes
+     prps UNKNOWN
+
+12:09:54.201 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+12:09:54.201 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx bech32:tb1qyvqh86akdkhnh8fh7j0q7n8j78k0wruz5et8tj
+12:09:54.201 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx value:10000
+12:09:54.201 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/SENDER] computeSpendAmount: keyBag=[14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1]
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/SENDER] computeSpendAmount: +input 10000 14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/SENDER] computeSpendAmount: -output 4858 tb1qfe8765vcdka0xgkjkdhxjzux8raq7qsyamffad
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STONEWALLX2/SENDER] computeSpendAmount = 5142
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - [STONEWALLX2/SENDER] maxSpendAmount = 5142: amount=5000 + sharedMinerFee=142
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - [STONEWALLX2/SENDER] SENDER verifiedSpendAmount=5142, maxSpendAmount=5142
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - checkFee: feeActual=284, feeExpected=284
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doStep4 STONEWALLX2/SENDER
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  0910de5bf08354a2dcccc2509fedfa82ec97541568620768e8644d95fa81f293
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[2ecf8c3e5697f0513999ed3aa8ea9cd04d127355] 0.00005 BTC
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     fee  0.00000657 BTC/kB, 0.00000284 BTC for 432 bytes
+     prps UNKNOWN
+
+12:09:54.202 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 SENDER => step=4
+12:09:54.204 [main] DEBUG com.samourai.wallet.test.AbstractTest -   0910de5bf08354a2dcccc2509fedfa82ec97541568620768e8644d95fa81f293
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004858 BTC
+     out  0[] PUSHDATA(20)[2ecf8c3e5697f0513999ed3aa8ea9cd04d127355] 0.00005 BTC
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     fee  0.00000657 BTC/kB, 0.00000284 BTC for 432 bytes
+     prps UNKNOWN
+
+12:09:54.205 [main] DEBUG com.samourai.wallet.test.AbstractTest - outputsActuals: {tb1q9m8cc0jkjlc9zwvea5a2365u6px3yu646vgez4=5000, tb1qfe8765vcdka0xgkjkdhxjzux8raq7qsyamffad=4858, tb1qgzzjhah2q3pqfwpx5xpdrd649qmyl59a6m6cp4=4858, tb1qv4ak4l0w76qflk4uulavu22kxtaajnltkzxyq5=5000}
+]]></system-out>
+  </testcase>
+  <testcase name="multiCahoots" classname="com.samourai.wallet.cahoots.ManualCahootsServiceTest" time="0.35">
+    <failure message="expected: &lt;{&quot;cahoots&quot;:{&quot;step&quot;:1,&quot;type&quot;:2,&quot;params&quot;:&quot;testnet&quot;,&quot;version&quot;:2},&quot;stonewallx2&quot;:{&quot;cahoots&quot;:{&quot;fingerprint_collab&quot;:&quot;f0d70870&quot;,&quot;psbt&quot;:&quot;&quot;,&quot;destPaynym&quot;:&quot;&quot;,&quot;cpty_account&quot;:0,&quot;spend_amount&quot;:5000,&quot;outpoints&quot;:[{&quot;value&quot;:10000,&quot;outpoint&quot;:&quot;9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1&quot;}],&quot;type&quot;:0,&quot;params&quot;:&quot;testnet&quot;,&quot;dest&quot;:&quot;tb1q9m8cc0jkjlc9zwvea5a2365u6px3yu646vgez4&quot;,&quot;version&quot;:2,&quot;fee_amount&quot;:0,&quot;fingerprint&quot;:&quot;eed8a1cd&quot;,&quot;step&quot;:1,&quot;collabChange&quot;:&quot;tb1qgzzjhah2q3pqfwpx5xpdrd649qmyl59a6m6cp4&quot;,&quot;id&quot;:&quot;testID&quot;,&quot;account&quot;:0,&quot;ts&quot;:123456}},&quot;stowaway&quot;:{&quot;cahoots&quot;:{&quot;psbt&quot;:&quot;&quot;,&quot;cpty_account&quot;:0,&quot;spend_amount&quot;:-1,&quot;outpoints&quot;:[],&quot;type&quot;:1,&quot;params&quot;:&quot;testnet&quot;,&quot;dest&quot;:&quot;&quot;,&quot;version&quot;:2,&quot;fee_amount&quot;:0,&quot;fingerprint&quot;:&quot;eed8a1cd&quot;,&quot;step&quot;:0,&quot;id&quot;:&quot;testID&quot;,&quot;account&quot;:0,&quot;ts&quot;:123456}}}&gt; but was: &lt;{&quot;cahoots&quot;:{&quot;step&quot;:1,&quot;type&quot;:2,&quot;params&quot;:&quot;testnet&quot;,&quot;version&quot;:2},&quot;stonewallx2&quot;:{&quot;cahoots&quot;:{&quot;fingerprint_collab&quot;:&quot;f0d70870&quot;,&quot;psbt&quot;:&quot;&quot;,&quot;destPaynym&quot;:&quot;&quot;,&quot;cpty_account&quot;:0,&quot;spend_amount&quot;:5000,&quot;outpoints&quot;:[{&quot;value&quot;:9000,&quot;outpoint&quot;:&quot;b4b65c3246da72537c93591919f8479f7a2b232f4dafec55b9e01d34e47fde26-1&quot;}],&quot;type&quot;:0,&quot;params&quot;:&quot;testnet&quot;,&quot;dest&quot;:&quot;tb1q9m8cc0jkjlc9zwvea5a2365u6px3yu646vgez4&quot;,&quot;version&quot;:2,&quot;fee_amount&quot;:0,&quot;fingerprint&quot;:&quot;eed8a1cd&quot;,&quot;step&quot;:1,&quot;collabChange&quot;:&quot;tb1qgzzjhah2q3pqfwpx5xpdrd649qmyl59a6m6cp4&quot;,&quot;id&quot;:&quot;testID&quot;,&quot;account&quot;:0,&quot;ts&quot;:123456}},&quot;stowaway&quot;:{&quot;cahoots&quot;:{&quot;psbt&quot;:&quot;&quot;,&quot;cpty_account&quot;:0,&quot;spend_amount&quot;:-1,&quot;outpoints&quot;:[],&quot;type&quot;:1,&quot;params&quot;:&quot;testnet&quot;,&quot;dest&quot;:&quot;&quot;,&quot;version&quot;:2,&quot;fee_amount&quot;:0,&quot;fingerprint&quot;:&quot;eed8a1cd&quot;,&quot;step&quot;:0,&quot;id&quot;:&quot;testID&quot;,&quot;account&quot;:0,&quot;ts&quot;:123456}}}&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <{"cahoots":{"step":1,"type":2,"params":"testnet","version":2},"stonewallx2":{"cahoots":{"fingerprint_collab":"f0d70870","psbt":"","destPaynym":"","cpty_account":0,"spend_amount":5000,"outpoints":[{"value":10000,"outpoint":"9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1"}],"type":0,"params":"testnet","dest":"tb1q9m8cc0jkjlc9zwvea5a2365u6px3yu646vgez4","version":2,"fee_amount":0,"fingerprint":"eed8a1cd","step":1,"collabChange":"tb1qgzzjhah2q3pqfwpx5xpdrd649qmyl59a6m6cp4","id":"testID","account":0,"ts":123456}},"stowaway":{"cahoots":{"psbt":"","cpty_account":0,"spend_amount":-1,"outpoints":[],"type":1,"params":"testnet","dest":"","version":2,"fee_amount":0,"fingerprint":"eed8a1cd","step":0,"id":"testID","account":0,"ts":123456}}}> but was: <{"cahoots":{"step":1,"type":2,"params":"testnet","version":2},"stonewallx2":{"cahoots":{"fingerprint_collab":"f0d70870","psbt":"","destPaynym":"","cpty_account":0,"spend_amount":5000,"outpoints":[{"value":9000,"outpoint":"b4b65c3246da72537c93591919f8479f7a2b232f4dafec55b9e01d34e47fde26-1"}],"type":0,"params":"testnet","dest":"tb1q9m8cc0jkjlc9zwvea5a2365u6px3yu646vgez4","version":2,"fee_amount":0,"fingerprint":"eed8a1cd","step":1,"collabChange":"tb1qgzzjhah2q3pqfwpx5xpdrd649qmyl59a6m6cp4","id":"testID","account":0,"ts":123456}},"stowaway":{"cahoots":{"psbt":"","cpty_account":0,"spend_amount":-1,"outpoints":[],"type":1,"params":"testnet","dest":"","version":2,"fee_amount":0,"fingerprint":"eed8a1cd","step":0,"id":"testID","account":0,"ts":123456}}}>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
+	at com.samourai.wallet.cahoots.AbstractCahootsTest.verify(AbstractCahootsTest.java:137)
+	at com.samourai.wallet.cahoots.AbstractCahootsTest.verify(AbstractCahootsTest.java:141)
+	at com.samourai.wallet.cahoots.ManualCahootsServiceTest.multiCahoots(ManualCahootsServiceTest.java:169)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-out><![CDATA[12:09:54.213 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:54.366 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:54.367 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:54.367 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:54.439 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LZp', bipPub='tpu...LZp'}
+12:09:54.439 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...2dH', bipPub='upu...bSs'}
+12:09:54.439 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...MfN', bipPub='vpu...sew'}
+12:09:54.439 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...y1p', bipPub='vpu...D4a'}
+12:09:54.439 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...NLN', bipPub='vpu...RKR'}
+12:09:54.439 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...86t', bipPub='vpu...XXs'}
+12:09:54.536 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...XeJ', bipPub='tpu...XeJ'}
+12:09:54.536 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...TBn', bipPub='upu...QVy'}
+12:09:54.536 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...Nbr', bipPub='vpu...R4q'}
+12:09:54.536 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...ZBX', bipPub='vpu...XxM'}
+12:09:54.536 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...do5', bipPub='vpu...2eX'}
+12:09:54.536 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...QxP', bipPub='vpu...M4F'}
+12:09:54.565 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:54.715 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:54.715 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:54.789 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LZp', bipPub='tpu...LZp'}
+12:09:54.789 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...2dH', bipPub='upu...bSs'}
+12:09:54.789 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...MfN', bipPub='vpu...sew'}
+12:09:54.789 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...y1p', bipPub='vpu...D4a'}
+12:09:54.789 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...NLN', bipPub='vpu...RKR'}
+12:09:54.789 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...86t', bipPub='vpu...XXs'}
+12:09:54.884 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...XeJ', bipPub='tpu...XeJ'}
+12:09:54.884 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...TBn', bipPub='upu...QVy'}
+12:09:54.884 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...Nbr', bipPub='vpu...R4q'}
+12:09:54.884 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...ZBX', bipPub='vpu...XxM'}
+12:09:54.884 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...do5', bipPub='vpu...2eX'}
+12:09:54.884 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...QxP', bipPub='vpu...M4F'}
+12:09:54.912 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway INITIATOR => step=0
+12:09:54.912 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - # STONEWALLx2 INITIATOR => step=0
+12:09:54.912 [main] DEBUG com.samourai.wallet.cahoots.multi.MultiCahootsService - Getting SaaS Threshold...
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.multi.MultiCahootsService - SaaS Threshold: 200000000
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.multi.MultiCahootsService - ###### BEGIN doMultiCahoots1 MULTI/COUNTERPARTY
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - BIP FORMAT:: SEGWIT_NATIVE
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - +output (CounterParty Mix) = tb1qv4ak4l0w76qflk4uulavu22kxtaajnltkzxyq5
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doSTONEWALLx2_1 STONEWALLX2/COUNTERPARTY
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={}
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=null
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - BIP84 utxos:2
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - BIP84 selected utxo: CahootsUtxo{utxo=b4b65c3246da72537c93591919f8479f7a2b232f4dafec55b9e01d34e47fde26:1, value=9000, address=tb1qh287jqsh6mkpqmd8euumyfam00fkr78qhrdnde, path=null, xpub=tpubDCKFqGcC4KmHwUHG6orVRRUQZZZ3s9kQ64YUufULo9SY1E35aJwa2MH18AxuKddtJzfjMzCgKTEgBJx3WAGxYxVdMxeTYK5Xbtsv5P6fNbr}
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - 1 selected utxos, totalContributedAmount=9000, requiredAmount=5546
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.stonewallx2.Stonewallx2Service - +output (CounterParty change) = tb1qgzzjhah2q3pqfwpx5xpdrd649qmyl59a6m6cp4
+12:09:54.913 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doSTONEWALLx2_1 STONEWALLX2/COUNTERPARTY
+12:09:54.914 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={b4b65c3246da72537c93591919f8479f7a2b232f4dafec55b9e01d34e47fde26-1=9000}
+12:09:54.914 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  0d4f38bd4383c6b8494a47ed878148b00758c2369f751093d14ea65824ae70c8
+  version 2
+  time locked until block 1234
+  opts into full replace-by-fee
+     in    0.00009 BTC
+          outpoint:b4b65c3246da72537c93591919f8479f7a2b232f4dafec55b9e01d34e47fde26:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[657b6afdeef6809fdabce7face295632fbd94feb] 0.00005 BTC
+     out  0[] PUSHDATA(20)[40852bf6ea044204b826a182d1b75528364fd0bd] 0.00004 BTC
+     fee  0.00 BTC/kB, 0.00 BTC for 113 bytes
+     prps UNKNOWN
+
+12:09:54.914 [main] DEBUG com.samourai.wallet.cahoots.multi.MultiCahootsService - ###### END doMultiCahoots1 MULTI/COUNTERPARTY
+12:09:54.914 [main] DEBUG com.samourai.wallet.cahoots.multi.MultiCahootsService - # MultiCahoots COUNTERPARTY => step=1
+]]></system-out>
+  </testcase>
+  <testcase name="Stowaway" classname="com.samourai.wallet.cahoots.ManualCahootsServiceTest" time="0.359">
+    <system-out><![CDATA[12:09:54.922 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:55.082 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:55.083 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:55.156 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LZp', bipPub='tpu...LZp'}
+12:09:55.156 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...2dH', bipPub='upu...bSs'}
+12:09:55.156 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...MfN', bipPub='vpu...sew'}
+12:09:55.156 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...y1p', bipPub='vpu...D4a'}
+12:09:55.156 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...NLN', bipPub='vpu...RKR'}
+12:09:55.156 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...86t', bipPub='vpu...XXs'}
+12:09:55.250 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...XeJ', bipPub='tpu...XeJ'}
+12:09:55.250 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...TBn', bipPub='upu...QVy'}
+12:09:55.250 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...Nbr', bipPub='vpu...R4q'}
+12:09:55.250 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...ZBX', bipPub='vpu...XxM'}
+12:09:55.250 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...do5', bipPub='vpu...2eX'}
+12:09:55.250 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...QxP', bipPub='vpu...M4F'}
+12:09:55.278 [main] DEBUG com.samourai.http.client.JettyHttpClient - +httpClient: no proxy
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LwY', bipPub='tpu...LwY'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...eV2', bipPub='upu...38D'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...re9', bipPub='vpu...dCu'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hvr', bipPub='vpu...4mL'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...sQD', bipPub='vpu...nrW'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[ASB_BIP84]: BipWallet{id='ASB_BIP84', samouraiAccount=SWAPS_ASB, derivation=BipDerivation{purpose=84, accountIndex=2147483641}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...p4i', bipPub='vpu...sEH'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_DEPOSIT]: BipWallet{id='SWAPS_DEPOSIT', samouraiAccount=SWAPS_DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=2147483643}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...3s7', bipPub='vpu...HpJ'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[SWAPS_REFUNDS]: BipWallet{id='SWAPS_REFUNDS', samouraiAccount=SWAPS_REFUNDS, derivation=BipDerivation{purpose=84, accountIndex=2147483642}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...rMX', bipPub='vpu...Sr9'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...hmu', bipPub='vpu...tNY'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[RICOCHET_BIP84]: BipWallet{id='RICOCHET_BIP84', samouraiAccount=RICOCHET, derivation=BipDerivation{purpose=84, accountIndex=2147483647}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...UMc', bipPub='vpu...knj'}
+12:09:55.427 [main] DEBUG com.samourai.wallet.api.backend.BackendApi - urlBackend=https://api.samouraiwallet.com/test/v2, oAuth=no
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.mix.dialog'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.stomp.client'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.util.FeeUtil'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.utils'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stowaway'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.cahoots.stonewallx2'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.wallet.sorobanClient'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.rpc'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.dialog'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.soroban.client.meeting'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to DEBUG for the logger 'com.samourai.whirlpool.client.wallet.orchestrator'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to ERROR for the logger 'org.bitcoinj'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to WARN for the logger 'org.bitcoin'
+12:09:55.427 [main] DEBUG com.samourai.wallet.util.LogbackUtils - Log level set to INFO for the logger 'org.eclipse.jetty'
+12:09:55.503 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...LZp', bipPub='tpu...LZp'}
+12:09:55.503 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...2dH', bipPub='upu...bSs'}
+12:09:55.503 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...MfN', bipPub='vpu...sew'}
+12:09:55.503 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...y1p', bipPub='vpu...D4a'}
+12:09:55.503 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...NLN', bipPub='vpu...RKR'}
+12:09:55.503 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...86t', bipPub='vpu...XXs'}
+12:09:55.597 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP44]: BipWallet{id='DEPOSIT_BIP44', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=44, accountIndex=0}, bipFormatDefault=LEGACY, bipFormats=[LEGACY], xPub='tpu...XeJ', bipPub='tpu...XeJ'}
+12:09:55.597 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP49]: BipWallet{id='DEPOSIT_BIP49', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=49, accountIndex=0}, bipFormatDefault=SEGWIT_COMPAT, bipFormats=[SEGWIT_COMPAT], xPub='tpu...TBn', bipPub='upu...QVy'}
+12:09:55.597 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[DEPOSIT_BIP84]: BipWallet{id='DEPOSIT_BIP84', samouraiAccount=DEPOSIT, derivation=BipDerivation{purpose=84, accountIndex=0}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...Nbr', bipPub='vpu...R4q'}
+12:09:55.597 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[PREMIX_BIP84]: BipWallet{id='PREMIX_BIP84', samouraiAccount=PREMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483645}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...ZBX', bipPub='vpu...XxM'}
+12:09:55.597 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[POSTMIX_BIP84]: BipWallet{id='POSTMIX_BIP84', samouraiAccount=POSTMIX, derivation=BipDerivation{purpose=84, accountIndex=2147483646}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE, SEGWIT_COMPAT, LEGACY], xPub='tpu...do5', bipPub='vpu...2eX'}
+12:09:55.597 [main] DEBUG com.samourai.wallet.bipWallet.WalletSupplierImpl - +BipWallet[BADBANK_BIP84]: BipWallet{id='BADBANK_BIP84', samouraiAccount=BADBANK, derivation=BipDerivation{purpose=84, accountIndex=2147483644}, bipFormatDefault=SEGWIT_NATIVE, bipFormats=[SEGWIT_NATIVE], xPub='tpu...QxP', bipPub='vpu...M4F'}
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway INITIATOR => step=0
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doStowaway1 STOWAWAY/COUNTERPARTY
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={}
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=null
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - BIP84 utxos:1
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - BIP84 selected random utxo: CahootsUtxo{utxo=9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1, value=10000, address=tb1qh287jqsh6mkpqmd8euumyfam00fkr78qhrdnde, path=null, xpub=tpubDCKFqGcC4KmHwUHG6orVRRUQZZZ3s9kQ64YUufULo9SY1E35aJwa2MH18AxuKddtJzfjMzCgKTEgBJx3WAGxYxVdMxeTYK5Xbtsv5P6fNbr}
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - 1 selected utxos, totalContributedAmount=10000, requiredAmount=5546
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - +output (CounterParty receive) = tb1q9z5slgl572zlc6yl8zg32vndh7tfzltzz3pw8w
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doStowaway1 STOWAWAY/COUNTERPARTY
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  d279c972a58341501eb3d4179bdd2528b98ef1682af70781f9d12609623607d3
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00005 BTC
+     fee  0.00060975 BTC/kB, 0.00005 BTC for 82 bytes
+     prps UNKNOWN
+
+12:09:55.626 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway COUNTERPARTY => step=1
+12:09:55.627 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway SENDER <= step=1
+12:09:55.627 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doStowaway2 STOWAWAY/SENDER
+12:09:55.627 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  d279c972a58341501eb3d4179bdd2528b98ef1682af70781f9d12609623607d3
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00005 BTC
+     fee  0.00060975 BTC/kB, 0.00005 BTC for 82 bytes
+     prps UNKNOWN
+
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - sender account (2):0
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - step2 tx:0200000001ad05bb9c893f5cb9762ea57729efaf4a4b8eb1e377533fddc49d15d01fb307940100000000fdffffff01881300000000000016001428a90fa3f4f285fc689f389115326dbf96917d6200000000
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - BIP84 utxos:1
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - BIP84 selected utxo: CahootsUtxo{utxo=14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1, value=10000, address=tb1qkymumss6zj0rxy9l3v5vqxqwwffy8jjsyhrkrg, path=null, xpub=tpubDDLBK9gJk4HdPCDzF4Yhxx3u6q1QWo7iZAPVHfsFjLp9rUxXf79FPEK4cKMiV1jrJqrCCVJnciMh1kau2xZtjpZ5DoiaK3RbF6MffFWXMfN}
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - BIP84 post selected utxo: CahootsUtxo{utxo=14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1, value=10000, address=tb1qkymumss6zj0rxy9l3v5vqxqwwffy8jjsyhrkrg, path=null, xpub=tpubDDLBK9gJk4HdPCDzF4Yhxx3u6q1QWo7iZAPVHfsFjLp9rUxXf79FPEK4cKMiV1jrJqrCCVJnciMh1kau2xZtjpZ5DoiaK3RbF6MffFWXMfN}
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - fee:216
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - 1 selected utxos, totalContributedAmount=10000, requiredAmount=5762
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - +output (sender change) = tb1qfe8765vcdka0xgkjkdhxjzux8raq7qsyamffad
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doStowaway2 STOWAWAY/SENDER
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  47c650b7d7d71e14cb9192169b5e8656da2083737f74bcbfef4d718e6971b132
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00015 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004784 BTC
+     fee  0.00001402 BTC/kB, 0.00000216 BTC for 154 bytes
+     prps UNKNOWN
+
+12:09:55.628 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway SENDER => step=2
+12:09:55.629 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway COUNTERPARTY <= step=2
+12:09:55.629 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doStep3 STOWAWAY/COUNTERPARTY
+12:09:55.629 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:55.629 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  47c650b7d7d71e14cb9192169b5e8656da2083737f74bcbfef4d718e6971b132
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00015 BTC
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004784 BTC
+     fee  0.00001402 BTC/kB, 0.00000216 BTC for 154 bytes
+     prps UNKNOWN
+
+12:09:55.629 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx:  5ee43707672e0fdf27c87e398c6f547f33dadef43fa510c2b7e22ab5fc271b85
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004784 BTC
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00015 BTC
+     fee  0.00001402 BTC/kB, 0.00000216 BTC for 154 bytes
+     prps UNKNOWN
+
+12:09:55.629 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+12:09:55.629 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx bech32:tb1qyvqh86akdkhnh8fh7j0q7n8j78k0wruz5et8tj
+12:09:55.629 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx value:10000
+12:09:55.630 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STOWAWAY/COUNTERPARTY] computeSpendAmount: keyBag=[9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1]
+12:09:55.630 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STOWAWAY/COUNTERPARTY] computeSpendAmount: +input 10000 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+12:09:55.630 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STOWAWAY/COUNTERPARTY] computeSpendAmount: -output 15000 tb1q9z5slgl572zlc6yl8zg32vndh7tfzltzz3pw8w
+12:09:55.630 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STOWAWAY/COUNTERPARTY] computeSpendAmount = -5000
+12:09:55.630 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - [STOWAWAY/COUNTERPARTY] maxSpendAmount = 0 (receives money)
+12:09:55.630 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - [STOWAWAY/COUNTERPARTY] COUNTERPARTY verifiedSpendAmount=-5000, maxSpendAmount=0
+12:09:55.630 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doStep3 STOWAWAY/COUNTERPARTY
+12:09:55.630 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:55.631 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  5ee43707672e0fdf27c87e398c6f547f33dadef43fa510c2b7e22ab5fc271b85
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004784 BTC
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00015 BTC
+     fee  0.00000818 BTC/kB, 0.00000216 BTC for 264 bytes
+     prps UNKNOWN
+
+12:09:55.631 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway COUNTERPARTY => step=3
+12:09:55.632 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway SENDER <= step=3
+12:09:55.632 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### BEGIN doStep4 STOWAWAY/SENDER
+12:09:55.632 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  5ee43707672e0fdf27c87e398c6f547f33dadef43fa510c2b7e22ab5fc271b85
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004784 BTC
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00015 BTC
+     fee  0.00000818 BTC/kB, 0.00000216 BTC for 264 bytes
+     prps UNKNOWN
+
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx:  5ee43707672e0fdf27c87e398c6f547f33dadef43fa510c2b7e22ab5fc271b85
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004784 BTC
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00015 BTC
+     fee  0.00000818 BTC/kB, 0.00000216 BTC for 264 bytes
+     prps UNKNOWN
+
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx bech32:tb1qyvqh86akdkhnh8fh7j0q7n8j78k0wruz5et8tj
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.Cahoots2x - signTx value:10000
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STOWAWAY/SENDER] computeSpendAmount: keyBag=[14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1]
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STOWAWAY/SENDER] computeSpendAmount: +input 10000 14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STOWAWAY/SENDER] computeSpendAmount: -output 4784 tb1qfe8765vcdka0xgkjkdhxjzux8raq7qsyamffad
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - [STOWAWAY/SENDER] computeSpendAmount = 5216
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - [STOWAWAY/SENDER] maxSpendAmount = 5216: amount=5000 + minerFee=216
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - [STOWAWAY/SENDER] SENDER verifiedSpendAmount=5216, maxSpendAmount=5216
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahootsService - checkFee: feeActual=216, feeExpected=216
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService - ###### END doStep4 STOWAWAY/SENDER
+12:09:55.633 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * outpoints={14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5-1=10000, 9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad-1=10000}
+12:09:55.634 [main] DEBUG com.samourai.wallet.cahoots.AbstractCahoots2xService -  * tx=  5ee43707672e0fdf27c87e398c6f547f33dadef43fa510c2b7e22ab5fc271b85
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004784 BTC
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00015 BTC
+     fee  0.00000582 BTC/kB, 0.00000216 BTC for 371 bytes
+     prps UNKNOWN
+
+12:09:55.634 [main] DEBUG com.samourai.wallet.cahoots.stowaway.StowawayService - # Stowaway SENDER => step=4
+12:09:55.637 [main] DEBUG com.samourai.wallet.test.AbstractTest -   5ee43707672e0fdf27c87e398c6f547f33dadef43fa510c2b7e22ab5fc271b85
+  version 2
+  opts into full replace-by-fee
+     in    0.0001 BTC
+          outpoint:14cf9c6be92efcfe628aabd32b02c85e763615ddd430861bc18f6d366e4c4fd5:1
+          sequence:fffffffd, opts into full RBF
+     in    0.0001 BTC
+          outpoint:9407b31fd0159dc4dd3f5377e3b18e4b4aafef2977a52e76b95c3f899cbb05ad:1
+          sequence:fffffffd, opts into full RBF
+     out  0[] PUSHDATA(20)[4e4fed51986dbaf322d2b36e690b8638fa0f0204] 0.00004784 BTC
+     out  0[] PUSHDATA(20)[28a90fa3f4f285fc689f389115326dbf96917d62] 0.00015 BTC
+     fee  0.00000582 BTC/kB, 0.00000216 BTC for 371 bytes
+     prps UNKNOWN
+
+12:09:55.637 [main] DEBUG com.samourai.wallet.test.AbstractTest - outputsActuals: {tb1q9z5slgl572zlc6yl8zg32vndh7tfzltzz3pw8w=15000, tb1qfe8765vcdka0xgkjkdhxjzux8raq7qsyamffad=4784}
+]]></system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.util.PrivKeyReaderTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.959 s -- in com.samourai.wallet.util.PrivKeyReaderTest

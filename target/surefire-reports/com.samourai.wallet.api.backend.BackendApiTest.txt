@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.api.backend.BackendApiTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 12.12 s -- in com.samourai.wallet.api.backend.BackendApiTest

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.bip47.rpc.obpp05.TestVectorsOBPP_RFC05
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s -- in com.samourai.wallet.bip47.rpc.obpp05.TestVectorsOBPP_RFC05

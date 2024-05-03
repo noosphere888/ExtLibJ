@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.bipFormat.BipFormatSupplierImplTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.258 s -- in com.samourai.wallet.bipFormat.BipFormatSupplierImplTest

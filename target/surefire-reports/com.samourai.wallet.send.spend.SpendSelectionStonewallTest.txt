@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.send.spend.SpendSelectionStonewallTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.028 s -- in com.samourai.wallet.send.spend.SpendSelectionStonewallTest

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.samourai.wallet.httpClient.JacksonHttpClientTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.663 s -- in com.samourai.wallet.httpClient.JacksonHttpClientTest
